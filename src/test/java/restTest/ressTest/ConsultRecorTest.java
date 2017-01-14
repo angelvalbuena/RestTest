@@ -16,7 +16,7 @@ import com.jayway.restassured.response.Response;
 
 public class ConsultRecorTest {
 	
-	String baseURL = "http://172.17.0.4:8080";
+	String baseURL = "http://172.17.0.3:8080";
 	String path = "/cloudBRT/api/monitoreo/recorridos/consultar/T3-1";
 
 		@Test
