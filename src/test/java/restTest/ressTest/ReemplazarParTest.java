@@ -19,7 +19,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 
 public class ReemplazarParTest {
-	String baseURL = "http://localhost:8080";
+	
 
 public class ReemplazarPar {
 	String baseURL = "http://172.17.0.2:8080";
