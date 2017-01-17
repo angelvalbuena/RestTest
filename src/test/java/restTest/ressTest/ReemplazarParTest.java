@@ -17,10 +17,9 @@ import com.jayway.restassured.specification.RequestSpecification;
 import static com.jayway.restassured.RestAssured.get;
 import static com.jayway.restassured.RestAssured.given;
 
-public class RecorridEdit {
-	
+public class ReemplazarParTest {
 	String baseURL = "http://localhost:8080";
-	String path = "/cloudBRT/api/admin/recorridos/editar";
+	String path = "/cloudBRT/api/admin/rutas/reemplazar/paradas/";
 	
 	@Test
 	public void httpPost() 
@@ -30,9 +29,11 @@ public class RecorridEdit {
 		
 		//Inicializamos URL Rest API
 		String APIUrl = url;
-		String APIBody = "{\"Clave\": \"T3-1\",  \"Parada\":\"ST17\", \"HoraAnterior\": \"00:15:57\", \"HoraNueva\":\"00:14:00\"  }";
-
-		//Solicitud de Construccion por medio de RequestSpecBuilder
+		
+		//Inicializamos la API del body
+				String APIBody = "{\"NombreRuta\": \"T3\",  \"ClaveParada\":\"ST17\",  \"PosicionParada\": \"3\" }";
+				
+				//Solicitud de Construccion por medio de RequestSpecBuilder
 				RequestSpecBuilder builder = new RequestSpecBuilder();
 
 				//Seteando api del body
@@ -43,13 +44,13 @@ public class RecorridEdit {
 				
 				RequestSpecification requestSpec = builder.build();
 				
-
-		        //Creando post request
+				//Creando post request
 				Response response = given().spec(requestSpec).when().post(APIUrl);
 				JSONObject JSONResponseBody= new JSONObject(response.body().asString());
 				boolean result = JSONResponseBody.getBoolean("Encontrado");
 				
 				//Assert de resultado esperado
-				Assert.assertEquals(result,false);
+				Assert.assertEquals(result,true);
+
    }
 }
