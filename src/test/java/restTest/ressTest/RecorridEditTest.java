@@ -19,7 +19,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class RecorridEditTest{
 	
-	String baseURL = "http://localhost:8080";
+	String baseURL = "http://172.17.0.2:8080";
 	String path = "/cloudBRT/api/admin/recorridos/editar";
 	
 	@Test

@@ -17,8 +17,13 @@ import com.jayway.restassured.specification.RequestSpecification;
 import static com.jayway.restassured.RestAssured.get;
 import static com.jayway.restassured.RestAssured.given;
 
+
 public class ReemplazarParTest {
 	String baseURL = "http://localhost:8080";
+
+public class ReemplazarPar {
+	String baseURL = "http://172.17.0.2:8080";
+
 	String path = "/cloudBRT/api/admin/rutas/reemplazar/paradas/";
 	
 	@Test
@@ -53,4 +58,5 @@ public class ReemplazarParTest {
 				Assert.assertEquals(result,true);
 
    }
+	}
 }
