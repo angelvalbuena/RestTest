@@ -31,7 +31,7 @@ public class CrearRutaTest {
 		boolean  Encontrado = jsonResponse.getBoolean("Encontrado");
 		
 		
-		Assert.assertEquals(Encontrado, false);
+		Assert.assertEquals(Encontrado, true);
 		
 		
    }
